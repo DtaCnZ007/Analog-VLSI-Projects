@@ -24,26 +24,4 @@ This bottom-up flow — device → subcircuit → symbol → block → netlist �
 
 Repository Structure
 
-The repository is organized by device technology first (BJT vs. MOS), then by circuit topology/project. Each individual project generally follows this pattern:
-
-Analog-VLSI-Projects/
-├── BJT-Circuits/
-│   └── [Circuit Name]/
-│       ├── Spice File/
-│       ├── DC Analysis/
-│       └── AC Analysis/
-└── MOS-Circuits/
-    ├── Differential Pair/
-    │   ├── Diff_Pair_1/
-    │   └── Diff_pair_Basics/
-    │       ├── Spice File/
-    │       ├── DC Analysis/
-    │       └── AC Analysis/
-    └── [Other Advanced Projects]/
-        ├── Spice File/
-        ├── DC Analysis/
-        └── AC Analysis/
-Spice File/ — netlists and .sch schematic files
-DC Analysis/ — DC operating point / DC sweep results
-AC Analysis/ — small-signal frequency response results (gain, bandwidth, phase)
-Additional folders (e.g. Transient Analysis, Noise Analysis) are added as individual projects require
+The repository is organized by device technology first (BJT vs. MOS), then by circuit topology/project.
