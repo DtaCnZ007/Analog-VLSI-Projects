@@ -1,9 +1,9 @@
 ** sch_path: /home/instaneous/diff_pair_loadanalysis1.sch
 **.subckt diff_pair_loadanalysis1
 V1 net1 0 1.8
-V2 net2 0 1.2
+V2 net2 0 1.0
 V3 net3 0 dc 0.9 ac 0.5 180
-V4 net4 0 0.8
+V4 net4 0 0.65
 V5 net5 0 dc 0.9 ac 0.5 0
 x1 net1 net2 VOUT1 VOUT2 net3 net5 VT net4 diff_pair_load1
 **** begin user architecture code
