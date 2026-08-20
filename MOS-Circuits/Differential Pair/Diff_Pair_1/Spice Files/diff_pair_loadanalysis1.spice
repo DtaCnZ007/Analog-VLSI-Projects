@@ -1,0 +1,46 @@
+** sch_path: /home/instaneous/diff_pair_loadanalysis1.sch
+**.subckt diff_pair_loadanalysis1
+V1 net1 0 1.8
+V2 net2 0 0.8
+V3 net3 0 dc 0.9 ac 0.5 180
+V4 net4 0 0.8
+V5 net5 0 dc 0.9 ac 0.5 0
+x1 net1 net2 VOUT1 VOUT2 net3 net5 VT net4 diff_pair_load1
+**** begin user architecture code
+
+
+.lib /home/instaneous/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130B/libs.tech/combined/sky130.lib.spice tt
+.control
+  run
+dc V5 0.6 1.2 0.01
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  diff_pair_load1.sym # of pins=8
+** sym_path: /home/instaneous/diff_pair_load1.sym
+** sch_path: /home/instaneous/diff_pair_load1.sch
+.subckt diff_pair_load1 VDD VB1 VOUT1 VOUT2 VIN2 VIN1 VT VB2
+*.iopin VOUT1
+*.iopin VOUT2
+*.ipin VIN1
+*.ipin VIN2
+*.ipin VB2
+*.ipin VDD
+*.ipin VB1
+*.iopin VT
+XM1 VOUT1 VIN1 VT GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1
+XM2 net1 VIN2 VT GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1
+XM3 VT VB2 0 GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1
+XM4 VOUT1 VB1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1
+XM5 VOUT2 VB1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1
+.ends
+
+.end
