@@ -1,1 +1,6 @@
-
+This File gives the comparision between theoritical and Actual Values
+In this diode-connected circuit there 2 main reasons for slight mismatch in theoritical vs calculated values
+1. Exclusion of channel length modulation
+2. Body effect
+Considering these 2 makes the accuracy of the answer much better
+The above pdfs uploaded shows the theoritical values calculated by me For DC and AC analysis respectively.
